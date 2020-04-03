@@ -1,61 +1,157 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Login Form</title>
-        <link rel="stylesheet" href="style.css">
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            charset="utf-8"></script>
-    </head>
-    <body>
-        <!--Need to add the (Path: public/)to the style and logo, to be able to see the HTML page -->
-        <div class="logo">
-            <img src="logo.jpg" width="50px" height="50px">
-        </div>
-        <h1>Login</h1>
-        <h3>Good Neighbour</h3>
-        <h4>TIE_IN</h4>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="mainText.css">
+    <link rel="stylesheet" href="logo.css">
+</head>
+<body>
+    
 
-        <div class="container-text-logo"></div>
-
-        <div class="bottom-text">
-            Don't have account?
-        </div>
-    <div    class="sign-up">
-        <a href="url" >Sign up </a>
+<!-- Logo and the navbar -->
+  <header>
+    <div class="logo">
+      <img src="logo.jpeg" width="60px" height="60px">
     </div>
-    </form>
+    <nav>
+        <ul>
+            <li><a href="#">How it works </a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
 
-    <div class="main-text">Let's Work Together</div>
+    <div class="contact"><a href="#">TIE_IN</div>
+ </header>
+<!-- END Logo and the navbar -->
 
-    <form action="auth" method="POST" class="login-form">
 
-        <div class="txtb">
-            <input type="text" name="username" placeholder="Username" required="required"></div>
+    <div class="cotn_principal">
+        <div class="cont_centrar">
+          <div class="cont_login">
+            <div class="cont_info_log_sign_up">
+              <div class="col_md_login">
+                <div class="cont_ba_opcitiy">
+      
+                  <h2>Do you have an account </h2>
+                  <p></p>
+                  <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                </div>
+              </div>
+              <div class="col_md_sign_up">
+                <div class="cont_ba_opcitiy">
+                  <h2>  Welcome to TIE_IN Sign up from here</h2>
+      
+                  <p></p>
+      
+                  <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                </div>
+              </div>
+            </div>
+      
+            <div class="cont_back_info">
+              <div class="cont_img_back_grey">
+                <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+              </div>
+            </div>
 
-        <div class="txtb">
-            <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                required="required">
+            <!-- Start the login & reg div-->
+            <div class="cont_forms">
+              <div class="cont_img_back_">
+                <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+              </div>
+              
+
+              <!-- Start the login  form-->
+              <form action="auth" method="POST" class="cont_form_login">
+                <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                <h2>LOGIN</h2>
+                <input type="text" name="username" placeholder="Username" required="required" />
+                <input type="password" name="password" placeholder="Password" required="required" />
+                <input type="submit" class="btn_login" value="LOGIN" onclick="cambiar_login()">  
+              </form>
+              <!-- End the login form -->
+          
+
+              <!-- Start the Sign up  form-->
+             <form action="auth" method="POST">
+              <div class="cont_form_sign_up">
+                <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                <h2>SIGN UP</h2>
+                <input type="text" placeholder="Email" name="email" required />
+                <input type="text" placeholder="User" name="Username" required />
+                <input type="password" placeholder="Password" name="psw" required/>
+                <input type="submit" class="btn_sign_up" value="SIGN UP" onclick="cambiar_sign_up()">
+              </div>
+              </form>
+              <!-- End the Sign up form -->
+      
+            </div>
+            <!-- End the login & reg div-->
+      
+          </div>
         </div>
+      </div>
 
-        <input type="submit" class="logbtn" value="Login">
-    </form>
 
-    <script type="text/javascript">
-        $(".txtb input").on("focus", function () {
-            $(this).addClass("focus");
-        });
+      <!-- Main text strart and finsh in this div  -->
+      <div class="main-text">
+        <h1 class="heading">Let's work <span class="underline--magical"> together</span> </h1>
+        <h6 class="subheading">       <span class="underline--magical">Good neighbor</span> </h6>
+      </div>
 
-        $(".txtb input").on("blur", function () {
-            if ($(this).val() == "") 
-                $(this).removeClass("focus");
-            }
-        );
-    </script>
+        
+
+
+
+ <script>
+  //Login and reg script //
+  function cambiar_login() {
+    document.querySelector(".cont_forms").className =
+      "cont_forms cont_forms_active_login";
+    document.querySelector(".cont_form_login").style.display = "block";
+    document.querySelector(".cont_form_sign_up").style.opacity = "0";
+  
+    setTimeout(function () {
+      document.querySelector(".cont_form_login").style.opacity = "1";
+    }, 400);
+  
+    setTimeout(function () {
+      document.querySelector(".cont_form_sign_up").style.display = "none";
+    }, 200);
+  }
+  
+  function cambiar_sign_up(at) {
+    document.querySelector(".cont_forms").className =
+      "cont_forms cont_forms_active_sign_up";
+    document.querySelector(".cont_form_sign_up").style.display = "block";
+    document.querySelector(".cont_form_login").style.opacity = "0";
+  
+    setTimeout(function () {
+      document.querySelector(".cont_form_sign_up").style.opacity = "1";
+    }, 100);
+  
+    setTimeout(function () {
+      document.querySelector(".cont_form_login").style.display = "none";
+    }, 400);
+  }
+  
+  function ocultar_login_sign_up() {
+    document.querySelector(".cont_forms").className = "cont_forms";
+    document.querySelector(".cont_form_sign_up").style.opacity = "0";
+    document.querySelector(".cont_form_login").style.opacity = "0";
+  
+    setTimeout(function () {
+      document.querySelector(".cont_form_sign_up").style.display = "none";
+      document.querySelector(".cont_form_login").style.display = "none";
+    }, 500);
+  }
+  // END Login and reg script //
+</script>
+
 
 </body>
 

@@ -1,0 +1,38 @@
+.main-text{
+    position: absolute;
+    top: 115px;
+    left: 18%;
+    font-size: 50px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 11px 6px 8px #ecd9cb, 0 0 25px #000000, 0 0 5px #ecd9cb;
+  }
+
+  .heading{
+      font-family: none;
+  }
+
+  .subheading{
+    position: absolute;
+    top: 88px;
+    left: 665px;
+    text-align: center;
+    font-variant-caps: petite-caps;
+  }
+
+
+
+  /* The magic starts */
+
+  .underline--magical {
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 8px 114%;
+    transition: background-size 1.25s cubic-bezier(0.22, -0.42, 0.18, 1.57);
+}
+  .underline--magical:hover {
+    background-size: 200% 400%;
+  }
+  
