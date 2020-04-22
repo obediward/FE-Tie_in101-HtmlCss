@@ -19,6 +19,10 @@
     color: orange
 }
 
+
+/*
+
+The rotation of the logo 
 .rotate {
     animation: rotation 4s infinite linear;
   }
@@ -31,3 +35,4 @@
       transform: rotate(359deg);
     }
   }
+  */
